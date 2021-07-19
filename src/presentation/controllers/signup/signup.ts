@@ -17,7 +17,7 @@ export class SignUpController implements Controller {
     this.addAccount = addAccount
   }
 
-  async handle (httpRequest: HttpRequest): Promise< HttpResponse> {
+  async handle (httpRequest: HttpRequest): Promise<HttpResponse> {
     try {
       const requiredField = [
         'name',
@@ -52,6 +52,7 @@ export class SignUpController implements Controller {
 
       return ok(account)
     } catch (error) {
+      console.error(error)
       return serverError()
     }
   }
